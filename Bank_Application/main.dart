@@ -28,7 +28,7 @@ void main() {
       main(); // go back to main menu and go to the 3 attempts phase.
     }
   } else {
-    int attempts = 0; // 3 strikes.
+    int attempts = 0; // This counter is used to count logins. 3 times only.
 
     print("Pincode already exists. $loggedIn");
 
@@ -40,6 +40,7 @@ void main() {
         loggedIn = true;
         Bank_UI();
       } else if (userInput == "Q") {
+        // This !quits the app.
         print("Exiting...");
         exit(0);
       } else if (userInput != pincode) {
@@ -109,8 +110,12 @@ void Bank_UI() {
         int? withdrawalAmount = int.tryParse(withdrawInput ?? '');
         if (withdrawalAmount != null) {
           if (withdrawalAmount < money) {
-            money -= withdrawalAmount;
-            print("Withdrawal successful. New balance: $money");
+            if (withdrawalAmount > 0) {
+              money -= withdrawalAmount;
+              print("Withdrawal successful. New balance: $money");
+            } else {
+              print("ERROR: Withdrawal amount cannot be negative. or zero.");
+            }
           } else {
             print("Insufficient funds.");
           }
@@ -123,8 +128,12 @@ void Bank_UI() {
         String? depositInput = stdin.readLineSync();
         int? depositAmount = int.tryParse(depositInput ?? '');
         if (depositAmount != null) {
-          money += depositAmount;
-          print("Deposit successful. New balance: $money");
+          if (depositAmount > 0) {
+            money += depositAmount;
+            print("Deposit successful. New balance: $money");
+          } else {
+            print("ERROR: Withdrawal amount cannot be negative. or zero.");
+          }
         } else {
           print("Invalid input. Please enter a valid number.");
         }
