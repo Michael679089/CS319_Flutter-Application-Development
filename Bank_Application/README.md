@@ -47,3 +47,11 @@ Assignee:
 	2. Log Out Feature
 5. Rj Castellano
 	1. Pay Bills
+
+---
+
+1. create a new branch
+2. delete the old branch
+3. rename the branch to the old branch
+4. git push to the same repository.
+
