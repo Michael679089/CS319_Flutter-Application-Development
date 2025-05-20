@@ -92,7 +92,12 @@ void Bank_UI() {
             case "T":
                 stdout.write("Transfer amount: ");
                 String? transferInput = stdin.readLineSync();
-                int transferAmount = int.parse(transferInput!);
+                int? transferAmount = int.tryParse(transferInput ?? '');
+                if (transferAmount == null) {1
+                    print("Invalid input. Please enter a valid number.");
+                } else {
+                    // Process the transfer amount accordingly
+                }
                 // if does weird things when it's not a number
                 break;  
             case "W":
@@ -100,7 +105,6 @@ void Bank_UI() {
                 String? withdrawInput = stdin.readLineSync();
                 int withdrawAmount = int.parse(withdrawInput!);
                 // if does weird things when it's not a number
-                 
                 break;
             case "D":
                 stdout.write("Deposit amount: ");
