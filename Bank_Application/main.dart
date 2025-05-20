@@ -81,7 +81,7 @@ void Bank_UI() {
     """);
 
     while (userInput != "L") {
-        stdout.write("Please select an option: ");
+        stdout.write("(BANK GUI) Please select an option: ");
         userInput = stdin.readLineSync(); // Read user input
         userInput = userInput?.toUpperCase(); // Convert input to uppercase
 
@@ -93,26 +93,42 @@ void Bank_UI() {
                 stdout.write("Transfer amount: ");
                 String? transferInput = stdin.readLineSync();
                 int? transferAmount = int.tryParse(transferInput ?? '');
-                if (transferAmount == null) {1
+                if (transferAmount != null) {
+                    if (transferAmount < money) {
+                        money -= transferAmount;
+                        print("Transfer successful. New balance: $money");
+                    } else {
+                        print("Insufficient funds.");
+                    }
+                } else  {
                     print("Invalid input. Please enter a valid number.");
-                } else {
-                    // Process the transfer amount accordingly
                 }
-                // if does weird things when it's not a number
                 break;  
             case "W":
                 stdout.write("Withdrawal amount: ");
                 String? withdrawInput = stdin.readLineSync();
-                int withdrawAmount = int.parse(withdrawInput!);
-                // if does weird things when it's not a number
+                int? withdrawalAmount = int.tryParse(withdrawInput ?? '');
+                if (withdrawalAmount != null) {
+                    if (withdrawalAmount < money) {
+                        money -= withdrawalAmount;
+                        print("Withdrawal successful. New balance: $money");
+                    } else {
+                        print("Insufficient funds.");
+                    }
+                } else  {
+                    print("Invalid input. Please enter a valid number.");
+                }
                 break;
             case "D":
                 stdout.write("Deposit amount: ");
                 String? depositInput = stdin.readLineSync();
-                int depositAmount = int.parse(depositInput!);
-                // if does weird things when it's not a number
-                money += depositAmount;
-                print("Deposit successful. New balance: $money");
+                int? depositAmount = int.tryParse(depositInput ?? '');
+                if (depositAmount != null) {
+                    money += depositAmount;
+                    print("Deposit successful. New balance: $money");
+                } else  {
+                    print("Invalid input. Please enter a valid number.");
+                }
                 break;
             case "C":
                 setPincode();
@@ -135,30 +151,65 @@ void Bank_UI() {
 
 void payingBills() {    
     print("Which Bills to pay?");
-    print("E - Electricity");
-    print("W - Water");
-    print("I - Internet");
-    stdout.write("Bills option: ");
+    print("E - Electricity (" + BillsToPay[0][1].toString() + " Left)");
+    print("W - Water (" + BillsToPay[1][1].toString() + " Left)");
+    print("I - Internet (" + BillsToPay[2][1].toString() + " Left)");
+    stdout.write("(Bills) option (Q to leave): ");
     String? billOption = stdin.readLineSync();
     billOption = billOption?.toUpperCase(); // Convert input to uppercase
 
+    void payBill(String billType) {        
+        stdout.write("Pay $billType Amount: ");
+        String? billInput = stdin.readLineSync();
+        int? paymentInput = int.tryParse(billInput ?? '');
+        
+        if (paymentInput != null) {
+            int paymentAmount = paymentInput;
+            if (paymentAmount <= money) {
+                int billNum = 0;
+                switch(billType) {
+                    case "Electricity":
+                        billNum = 0;
+                        break;
+                    case "Water":
+                        billNum = 1;
+                        break;
+                    case "Internet":
+                        billNum = 2;
+                        break;
+                }
+                if (paymentAmount > BillsToPay[billNum][1]) {
+                    paymentAmount = BillsToPay[billNum][1];
+                }
+                money -= paymentAmount;
+                BillsToPay[billNum][1] -= paymentAmount;
+
+                print("(Bill) $billType Payment successful. Bill $billType left (" + BillsToPay[billNum][1].toString() + "). Money Left $money");
+            }
+        } else {
+            print("ERROR: Invalid Input");
+        }
+    }
+
     switch (billOption) {
         case "E": // Paying Electiricty Bill
-            stdout.write("Pay Electricity Amount: ");
-            String? electricityInput = stdin.readLineSync();
-            int electricityAmount = int.parse(electricityInput!);
-            if (electricityAmount > money) {
-                print("Insufficient funds.");
-            } else {
-                money -= electricityAmount;
-                BillsToPay[0][1] -= electricityAmount;
-                print(BillsToPay[0][1].toString() + " Left" + "New balance: $money");
-            }
+            payBill("Electricity");
+            payingBills();
+            break;
+        case "W": // Paying Water Bill
+            payBill("Water");
+            payingBills();
+            break;
+        case "I": // Paying Internet Bill
+            payBill("Internet");
+            payingBills();
+            break;
+        case "Q": // Quit Baying Bills GUI Page.
+            print("Exiting paying bills...");
             break;
         default:
             print("Invalid option. Please try again.");
+            payingBills();
             break;
     }
-
-    print("Exiting paying bills...");
 }
