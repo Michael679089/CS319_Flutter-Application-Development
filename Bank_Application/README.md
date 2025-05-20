@@ -1,10 +1,15 @@
-# Instructions
-- Create a program for ATMs:
-	- Here are the following requirements and features:
+# Video of the Demo Project
 
-Flow:
-1. [ ] Enter Pincode
-2. [ ] Exit the program if 3 times failed upon entering the PIN is entered incorrectly three times.
+
+
+# Presentation
+A simple ATM bank simulation in dart that only holds one account.
+
+## Flowchart:
+1. [x] Enter Pincode
+	1. Code:
+		1. 
+2. [x] Exit the program if 3 times failed upon entering the PIN is entered incorrectly three times.
 3. [x] Features:
 	  - [x] Balance Inquiry  [completion:: 2025-05-20]
 		  - Asking how much balance you have
@@ -14,16 +19,16 @@ Flow:
 		  - Transferring the money to another user.
 			  - In this instance, transferring money to a fake user = Cash--
 	  - [ ] Change Pin
-	  - [ ] Pay Bills
+	  - [x] Pay Bills
 		  - Options:
 			  1. Pay Electricity Bill = Cash--
 			  2. Pay Wifi Bill = Cash--
 			  3. Pay Water Bill = Cash--
-	  - [ ] Deposit Money
+	  - [x] Deposit Money
 		  - Cash++
-  4. [ ] Log Out Feature.
+  4. [x] Log Out Feature.
 	  - Logs the user out and asks for pin code again.
-  5. [ ] Quit App
+  5. [x] Quit App
 	  - User can quit the app by pressing “Q”
 - [ ] Requirements for Submission:  
 	- [ ] Dart Codes
@@ -48,4 +53,5 @@ Assignee:
 5. Rj Castellano
 	1. Pay Bills
 
----
+List of Codes:
+
