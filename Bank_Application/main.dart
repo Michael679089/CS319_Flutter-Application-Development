@@ -40,7 +40,7 @@ void main() {
             if (userInput == pincode) {
                 loggedIn = true;
                 Bank_UI();
-            } else if (userInput == "E") {
+            } else if (userInput == "Q") {
                 print("Exiting...");
                 exit(0);
             } else if (userInput != pincode) {
