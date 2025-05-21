@@ -56,13 +56,31 @@ void main() {
 }
 
 void setPincode() {
-  // user should confirm their passcode
-  // don't allow users to set a pincode that's empty
+  String? firstEntry;
+  String? secondEntry;
 
-  pincode = "1";
+  while (true) {
+    stdout.write("Enter your new pincode: ");
+    firstEntry = stdin.readLineSync();
 
-  print("pincode has been set to: $pincode");
+    if (firstEntry == null || firstEntry.trim().isEmpty) {
+      print("Pincode cannot be empty. Please try again.");
+      continue;
+    }
+
+    stdout.write("Confirm your new pincode: ");
+    secondEntry = stdin.readLineSync();
+
+    if (firstEntry == secondEntry) {
+      pincode = firstEntry;
+      print("Pincode has been set successfully.");
+      break;
+    } else {
+      print("Pincode does not match. Please try again.");
+    }
+  }
 }
+
 
 void Bank_UI() {
   String? userInput;
