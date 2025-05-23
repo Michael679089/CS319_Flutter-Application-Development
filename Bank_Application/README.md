@@ -33,6 +33,10 @@ A simple ATM bank simulation in dart that only holds one account.
 		1. Transferring the money to another user.
 			1. In this instance, transferring money to a fake user = Cash--
 	4. [x] Change Pin
+		1. Codes:
+			1. ![[Bank_Application/README#Change Pin (code)]]
+		2. Photo:
+			1. ![[Bank_Application/README#Change Pin (photo)]]
 	5. [x] Pay Bills
 		1. [x] Options:
 			1. [x] Pay Electricity Bill = Cash--
@@ -60,10 +64,10 @@ A simple ATM bank simulation in dart that only holds one account.
 		1. ![[Bank_Application/README#Quit App (code)]]
 	3. Photo:
 		1. ![[Bank_Application/README#Quit App (photo)]]
-- [ ] Requirements for Submission:  
-	- [ ] Dart Codes
-	- [ ] Video Demo presentation  
-	- [ ] Presentation screenshot of codes and result.
+- [x] Requirements for Submission:  
+	- [x] Dart Codes
+	- [x] Video Demo presentation  
+	- [x] Presentation screenshot of codes and result.
 
 Assignee:
 1. Chesca Solomon
@@ -356,3 +360,33 @@ while (attempts < 3 && !loggedIn) {
 ## Quit App (photo):
 ![[Pasted image 20250520160130.png]]
 
+## Change Pin (code):
+```dart
+void setPincode() {
+  String? firstEntry;
+  String? secondEntry;
+
+  while (true) {
+    stdout.write("Enter your new pincode: ");
+    firstEntry = stdin.readLineSync();
+
+    if (firstEntry == null || firstEntry.trim().isEmpty) {
+      print("Pincode cannot be empty. Please try again.");
+      continue;
+    }
+
+    stdout.write("Confirm your new pincode: ");
+    secondEntry = stdin.readLineSync();
+
+    if (firstEntry == secondEntry) {
+      pincode = firstEntry;
+      print("Pincode has been set successfully.");
+      break;
+    } else {
+      print("Pincode does not match. Please try again.");
+    }
+  }
+}
+```
+## Change Pin (photo):
+![[Pasted image 20250524004822.png]]
