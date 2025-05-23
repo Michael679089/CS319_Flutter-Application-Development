@@ -67,7 +67,7 @@ A simple ATM bank simulation in dart that only holds one account.
 
 Assignee:
 1. Chesca Solomon
-	1. [ ] Pincode Feature (first time user opens main.dart)
+	1. [x] Pincode Feature (first time user opens main.dart)
 	2. [x] Exit the program if 3 times failed upon entering the PIN is entered incorrectly three times.
 2. Jacob Delos Santos
 	1. [x] Balance Inquiry
@@ -76,10 +76,10 @@ Assignee:
 	4. [x] Quit App
 	5. [x] Pay Bills
 3. Paolo San Gabriel
-	1. [ ] Change Pin Function
+	1. [x] Change Pin Function
 4. Preys Dasun
 	1. [x] Transfer Money
-	2. [ ] Log Out Feature
+	2. [x] Log Out Feature
 5. Rj Castellano
 	1. [ ] Video Demo
 
