@@ -1,6 +1,6 @@
 # Video of the Demo Project
 
-
+Vide Demo Project Link: https://drive.google.com/file/d/1Fo8-S-TlLfa9qsTyOWsQh4VjTN7Byihy/view?usp=sharing
 
 # Presentation
 A simple ATM bank simulation in dart that only holds one account.
@@ -32,7 +32,7 @@ A simple ATM bank simulation in dart that only holds one account.
 	3. [x] Transfer Money  [completion:: 2025-05-20]
 		1. Transferring the money to another user.
 			1. In this instance, transferring money to a fake user = Cash--
-	4. [ ] Change Pin
+	4. [x] Change Pin
 	5. [x] Pay Bills
 		1. [x] Options:
 			1. [x] Pay Electricity Bill = Cash--
@@ -81,7 +81,7 @@ Assignee:
 	1. [x] Transfer Money
 	2. [x] Log Out Feature
 5. Rj Castellano
-	1. [ ] Video Demo
+	1. [x] Video Demo
 
 # List of Codes + Photos:
 ## Main Menu (code):
