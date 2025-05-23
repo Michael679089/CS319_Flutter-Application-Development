@@ -157,7 +157,13 @@ void Bank_UI() {
         }
         break;
       case "C":
-        setPincode();
+        stdout.write("Enter current pincode to change it: ");
+        String? currentPin = stdin.readLineSync();
+          if (currentPin == pincode) {
+            setPincode();
+          } else {
+            print("Incorrect pincode. Cannot change pincode.");
+          }
         break;
       case "P":
         payingBills();
