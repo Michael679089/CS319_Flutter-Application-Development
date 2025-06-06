@@ -118,7 +118,7 @@ class _PinSetupOrLoginPageState extends State<PinSetupOrLoginPage> {
               ),
               const SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () async {
+                onPressed: () {
                   if (_pinController.text == pincode) {
                     setState(() {
                       loggedIn = true;
@@ -132,7 +132,7 @@ class _PinSetupOrLoginPageState extends State<PinSetupOrLoginPage> {
                     attempts++;
                    if (attempts >= 3) {
                     _showErrorDialog(context, "Too many attempts. Exiting app.");
-                    await Future.delayed(const Duration(seconds: 2), () {
+                    Future.delayed(const Duration(seconds: 2), () {
                        if (!mounted) return; // Ensure widget is still in the tree
                       // ignore: use_build_context_synchronously
                       Navigator.of(context).pop();
@@ -596,5 +596,3 @@ class _DashboardPageState extends State<DashboardPage> {
     );
   }
 }
-// This is a simple banking app with PIN setup, login, and basic banking operations.
-// It includes features like balance inquiry, withdrawals, transfers, deposits, changing PIN, and paying bills.
