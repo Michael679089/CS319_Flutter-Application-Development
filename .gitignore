@@ -1,0 +1,5 @@
+.vscode/
+flutter/
+.obsidian/
+build/
+.dart_tool/
