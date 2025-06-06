@@ -1,0 +1,10 @@
+^C:\USERS\DELL\BANK_APPLICATION_UI\BANKAPPLICATION_UI\BUILD\WINDOWS\X64\CMAKEFILES\6ECB5BC1DB3242EB1DE8AE04253098D2\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/dell/Bank_Application_UI/BankApplication_UI/windows -BC:/Users/dell/Bank_Application_UI/BankApplication_UI/build/windows/x64 --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/dell/Bank_Application_UI/BankApplication_UI/build/windows/x64/flutter_application_2.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
