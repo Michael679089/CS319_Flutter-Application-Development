@@ -1,0 +1,3 @@
+[submodule "bank_application_ui"]
+	path = bank_application_ui
+	url = https://github.com/Michael679089/bank_application_ui.git
