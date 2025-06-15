@@ -6,5 +6,4 @@ Projects:
         ```bash
         git submodule update --init --recursive
         ```
-- w6: Navdrawer Bank Application
-    - draft: https://github.com/Rjjjj1412/Bank-NavDrawer
+- w6: Navdrawer Bank Application: https://github.com/Rjjjj1412/Bank-NavDrawer
