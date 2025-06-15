@@ -1,3 +1,6 @@
 [submodule "bank_application_ui"]
 	path = bank_application_ui
 	url = https://github.com/Michael679089/bank_application_ui.git
+[submodule "Bank-NavDrawer"]
+	path = Bank-NavDrawer
+	url = https://github.com/Rjjjj1412/Bank-NavDrawer
