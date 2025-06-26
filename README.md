@@ -7,3 +7,4 @@ Projects:
         git submodule update --init --recursive
         ```
 - w6: Navdrawer Bank Application: https://github.com/Rjjjj1412/Bank-NavDrawer
+    - w6: actual application is in the main repo project 
